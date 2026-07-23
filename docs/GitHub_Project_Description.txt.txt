@@ -1,0 +1,158 @@
+===============================================================================
+                    MANUAL DATABASE TESTING PROJECT
+===============================================================================
+
+Project Name
+-------------
+Manual Database Testing Project using MySQL
+
+Description
+------------
+This project demonstrates manual database testing using MySQL Workbench.
+It covers database design, SQL query writing, data validation, business rule
+testing, constraint testing, bug simulation, test case preparation, and bug
+reporting.
+
+The project follows a real-world QA workflow where data is verified against
+database constraints and business requirements.
+
+===============================================================================
+KEY FEATURES
+===============================================================================
+
+✔ Database Creation
+✔ Table Creation
+✔ Data Insertion
+✔ Basic SQL Queries
+✔ Intermediate SQL Queries
+✔ Advanced SQL Queries
+✔ Database Validation
+✔ Constraint Testing
+✔ Business Rule Validation
+✔ Bug Simulation
+✔ Test Case Design
+✔ Bug Reporting
+✔ Documentation
+
+===============================================================================
+TOOLS USED
+===============================================================================
+
+• MySQL Workbench
+• MySQL
+• SQL
+• Microsoft Excel
+• Git
+• GitHub
+
+===============================================================================
+DATABASE MODULES
+===============================================================================
+
+1. Departments
+2. Employees
+
+===============================================================================
+DATABASE TESTING COVERED
+===============================================================================
+
+Positive Testing
+
+Negative Testing
+
+Constraint Testing
+
+Business Rule Testing
+
+Data Validation
+
+Duplicate Record Validation
+
+Email Validation
+
+Phone Validation
+
+Salary Validation
+
+Age Validation
+
+Foreign Key Validation
+
+Unique Constraint Validation
+
+CHECK Constraint Validation
+
+ENUM Validation
+
+===============================================================================
+PROJECT FILES
+===============================================================================
+
+database/
+    01_Create_Database.sql
+    02_Create_Tables.sql
+    03_Insert_Test_Data.sql
+
+sql_queries/
+    04_Basic_SQL_Queries.sql
+    05_Intermediate_SQL_Queries.sql
+    06_Advanced_SQL_Queries.sql
+    07_Database_Testing_Queries.sql
+    08_Bug_Simulation.sql
+
+test_cases/
+    Database_Test_Cases.xlsx
+
+bug_reports/
+    Database_Bug_Report.xlsx
+
+diagrams/
+    ER_Diagram.png
+    Database_Architecture.png
+
+README.md
+
+===============================================================================
+PROJECT OBJECTIVE
+===============================================================================
+
+To demonstrate practical SQL skills and manual database testing techniques
+used by QA Engineers for validating data integrity, database constraints,
+and business rules.
+
+===============================================================================
+LEARNING OUTCOMES
+===============================================================================
+
+• Database Design
+• SQL Query Writing
+• Data Validation
+• Database Testing
+• Constraint Testing
+• Bug Reporting
+• Test Case Preparation
+• QA Documentation
+• GitHub Project Management
+
+===============================================================================
+AUTHOR
+===============================================================================
+
+Jay Shinde
+
+Software Test Engineer
+
+Skills
+
+• Manual Testing
+• SQL
+• Database Testing
+• Selenium
+• Java
+• TestNG
+• API Testing
+• MySQL
+• Git
+• GitHub
+
+===============================================================================

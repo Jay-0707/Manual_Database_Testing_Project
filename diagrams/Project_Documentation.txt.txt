@@ -1,0 +1,527 @@
+===============================================================================
+                    MANUAL DATABASE TESTING PROJECT
+===============================================================================
+
+Author      : Jay Shinde
+Database    : Manual Database Testing
+Tool Used   : MySQL Workbench
+Language    : SQL
+Version     : 1.0
+
+===============================================================================
+1. PROJECT OVERVIEW
+===============================================================================
+
+The Manual Database Testing Project demonstrates database creation, SQL query
+execution, database validation, constraint testing, business rule testing,
+bug simulation, test case preparation, and bug reporting.
+
+This project simulates an Employee Management System where employees belong
+to different departments.
+
+===============================================================================
+2. DATABASE ARCHITECTURE
+===============================================================================
+
+                        +----------------------+
+                        |       USER           |
+                        +----------------------+
+                                   |
+                                   |
+                                   V
+                      +---------------------------+
+                      |     MySQL Workbench       |
+                      +---------------------------+
+                                   |
+                                   |
+                                   V
+                 +----------------------------------------+
+                 |    ManualDatabaseTesting Database       |
+                 +----------------------------------------+
+                     |                              |
+                     |                              |
+                     V                              V
+          +--------------------+        +-------------------------+
+          |    departments      |        |      employees          |
+          +--------------------+        +-------------------------+
+                     |                              |
+                     +--------------+---------------+
+                                    |
+                                    V
+                        SQL Queries & Validation
+                                    |
+                                    V
+                         Database Testing Queries
+                                    |
+                                    V
+                             Bug Simulation
+                                    |
+                                    V
+                        Test Cases & Bug Reports
+
+===============================================================================
+3. ENTITY RELATIONSHIP (ER DIAGRAM)
+===============================================================================
+
+                          +----------------------+
+                          |     departments      |
+                          +----------------------+
+                          | PK department_id     |
+                          | department_name      |
+                          | location             |
+                          +----------------------+
+                                    |
+                                    | 1
+                                    |
+                                    |
+                                    | M
++-----------------------------------------------------------------------+
+|                              employees                               |
++-----------------------------------------------------------------------+
+| PK employee_id                                                        |
+| first_name                                                            |
+| last_name                                                             |
+| gender                                                                |
+| date_of_birth                                                         |
+| email (UNIQUE)                                                        |
+| phone (UNIQUE)                                                        |
+| job_title                                                             |
+| salary                                                                |
+| hire_date                                                             |
+| employee_status                                                       |
+| FK department_id                                                      |
+| created_at                                                            |
++-----------------------------------------------------------------------+
+
+===============================================================================
+4. DATABASE RELATIONSHIP
+===============================================================================
+
+Relationship Type
+
+One Department
+        |
+        | 1
+        |
+        |----------------------------<
+                                     Many Employees
+
+One department can have multiple employees.
+
+Each employee belongs to only one department.
+
+===============================================================================
+5. DATABASE TABLES
+===============================================================================
+
+Table 1 : departments
+
+Columns
+
+department_id
+department_name
+location
+
+Primary Key
+
+department_id
+
+-------------------------------------------------------
+
+Table 2 : employees
+
+Columns
+
+employee_id
+first_name
+last_name
+gender
+date_of_birth
+email
+phone
+job_title
+salary
+hire_date
+employee_status
+department_id
+created_at
+
+Primary Key
+
+employee_id
+
+Foreign Key
+
+department_id
+
+References
+
+departments.department_id
+
+===============================================================================
+6. CONSTRAINTS USED
+===============================================================================
+
+Primary Key
+
+employee_id
+department_id
+
+Foreign Key
+
+department_id
+
+Unique Constraint
+
+email
+phone
+
+Check Constraint
+
+salary > 0
+
+Enum Constraint
+
+gender
+
+Allowed Values
+
+Male
+Female
+Other
+
+Employee Status
+
+Active
+Inactive
+
+Auto Increment
+
+employee_id
+department_id
+
+Default
+
+created_at
+
+===============================================================================
+7. DATA TYPES USED
+===============================================================================
+
+INT
+
+employee_id
+department_id
+
+VARCHAR
+
+first_name
+last_name
+email
+phone
+job_title
+department_name
+location
+
+DATE
+
+date_of_birth
+hire_date
+
+DECIMAL
+
+salary
+
+ENUM
+
+gender
+employee_status
+
+TIMESTAMP
+
+created_at
+
+===============================================================================
+8. PROJECT FLOW
+===============================================================================
+
+Create Database
+
+        |
+
+Create Tables
+
+        |
+
+Insert Test Data
+
+        |
+
+Basic SQL Queries
+
+        |
+
+Intermediate SQL Queries
+
+        |
+
+Advanced SQL Queries
+
+        |
+
+Database Validation Queries
+
+        |
+
+Bug Simulation
+
+        |
+
+Execute Validation Queries
+
+        |
+
+Prepare Test Cases
+
+        |
+
+Prepare Bug Report
+
+        |
+
+GitHub Upload
+
+===============================================================================
+9. SQL FILES
+===============================================================================
+
+01_Create_Database.sql
+
+Creates the database.
+
+-------------------------------------------------------
+
+02_Create_Tables.sql
+
+Creates departments and employees tables.
+
+-------------------------------------------------------
+
+03_Insert_Test_Data.sql
+
+Inserts sample employee and department data.
+
+-------------------------------------------------------
+
+04_Basic_SQL_Queries.sql
+
+Basic SQL statements.
+
+SELECT
+WHERE
+ORDER BY
+LIMIT
+GROUP BY
+HAVING
+LIKE
+IN
+BETWEEN
+
+-------------------------------------------------------
+
+05_Intermediate_SQL_Queries.sql
+
+JOIN
+CASE
+UNION
+Views
+Subqueries
+COALESCE
+IFNULL
+EXISTS
+
+-------------------------------------------------------
+
+06_Advanced_SQL_Queries.sql
+
+Highest Salary
+Nth Highest Salary
+Correlated Queries
+Department Analysis
+Duplicate Detection
+Advanced Subqueries
+
+-------------------------------------------------------
+
+07_Database_Testing_Queries.sql
+
+Validation Queries
+
+Duplicate Records
+
+Null Values
+
+Invalid Data
+
+Future Dates
+
+Business Rules
+
+Data Integrity
+
+Salary Validation
+
+Email Validation
+
+Phone Validation
+
+Department Validation
+
+-------------------------------------------------------
+
+08_Bug_Simulation.sql
+
+Duplicate Email
+
+Duplicate Phone
+
+Negative Salary
+
+Invalid Department
+
+Future Hire Date
+
+Future DOB
+
+Employee Below 18
+
+Empty First Name
+
+Empty Last Name
+
+Invalid Email Format
+
+Invalid Phone Length
+
+Phone Contains Characters
+
+Invalid Employee Status
+
+Invalid Gender
+
+Salary Outside Business Range
+
+===============================================================================
+10. DATABASE TESTING TYPES
+===============================================================================
+
+Positive Testing
+
+Valid data should be inserted successfully.
+
+-------------------------------------------------------
+
+Negative Testing
+
+Invalid data should be rejected.
+
+-------------------------------------------------------
+
+Constraint Testing
+
+Primary Key
+
+Foreign Key
+
+Unique
+
+Check
+
+Enum
+
+-------------------------------------------------------
+
+Business Rule Validation
+
+Future Hire Date
+
+Future DOB
+
+Age Validation
+
+Salary Validation
+
+Phone Validation
+
+Email Validation
+
+Blank Values
+
+===============================================================================
+11. PROJECT DELIVERABLES
+===============================================================================
+
+Database Scripts
+
+SQL Queries
+
+Validation Queries
+
+Bug Simulation
+
+Database Test Cases
+
+Database Bug Report
+
+ER Diagram
+
+Architecture Diagram
+
+README.md
+
+GitHub Repository
+
+===============================================================================
+12. PROJECT SUMMARY
+===============================================================================
+
+Project Name
+
+Manual Database Testing Project
+
+Database
+
+MySQL
+
+Tool
+
+MySQL Workbench
+
+Modules
+
+Departments
+Employees
+
+Testing Performed
+
+Database Testing
+
+Constraint Testing
+
+Business Rule Validation
+
+Bug Simulation
+
+SQL Validation
+
+Documentation
+
+Test Cases
+
+Bug Report
+
+README
+
+GitHub
+
+===============================================================================
